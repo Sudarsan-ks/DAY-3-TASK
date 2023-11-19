@@ -1,0 +1,212 @@
+1.Print odd numbers in an array
+
+Anonymous Function:
+
+var array = [1,2,3,4,5,6,7,8,9]
+var sud = function(){
+    for(var i=0; i<array.length; i++){
+        if(array[i]%2!=0){
+       console.log(array[i]);
+        }
+    }
+};sud();
+
+IIFE Function:
+
+(function(array){
+    for(var i=0; i<array.length; i++){
+        if(array[i]%2!=0){
+       console.log(array[i])
+        }
+    }
+})([1,2,3,4,5,6,7,8,9]);
+
+
+2.Convert all the strings to title caps in a string array
+
+Anonymous Function:
+
+var sud = "sudarsan the developer";
+var a = function(){
+   sud = sud.split(" ");
+   for(var i=0; i<sud.length; i++){
+       sud[i]=sud[i].charAt(0).toUpperCase()+sud[i].slice(1);
+   }
+   return sud.join(" ");
+};
+console.log(a());
+
+IIFE Function:
+
+(function(sud){
+    sud=sud.split(" ");
+    for(var i=0; i<sud.length; i++){
+        sud[i]=sud[i].charAt(0).toUpperCase()+sud[i].slice(1);
+    }
+    console.log(sud.join(" "));
+})("Sudarsan the developer");
+
+3.Sum of all numbers in an array
+
+Anonymous Function:
+
+var array = [1,2,3,4,5,6,7,8,9];
+var a =function(){
+    var sum=0;
+    for(var i=0; i<array.length; i++){
+        sum=sum+array[i];
+    }
+    return sum;
+};console.log(a());
+
+IIFE Function:
+
+(function(array){
+    var sum=0;
+    for(var i=0; i<array.length; i++){
+        sum=sum+array[i];
+    }
+    console.log(sum);
+})([1,2,3,4,5,6,7,8,9])
+
+4.Return all the prime numbers in an array
+
+Anonymous Function:
+
+var array = [2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17];
+var sudarsan  = function(){
+    for(var j=0; j<=array.length; j++){
+       var count = 0;
+        for(var i=1; i<=array[j]; i++){
+            if(array[j]%i==0)
+            count++
+        }if(count==2){
+        console.log(array[j])
+        }
+    }
+};
+sudarsan();
+
+IIFE Function:
+
+(function(array){
+    for(var j=0; j<=array.length; j++){
+       var count = 0;
+        for(var i=1; i<=array[j]; i++){
+            if(array[j]%i==0)
+            count++
+        }if(count==2){
+        console.log(array[j])
+        }
+    }
+})([2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]);
+
+5.Return all the palindromes in an array
+
+Anonymous Function:
+
+var array = ["madam", "sudarsan","dad","racecar","ball"];
+var palindrome = function(){
+    for(var i=0; i<array.length; i++){
+    var sud=array[i].split("").reverse().join("");
+    if(array[i]==sud){
+        console.log(array[i]);
+    }
+}
+};
+palindrome();
+
+IIFE Function:
+
+(function(array){
+    for(var i=0; i<array.length; i++){
+    var sud=array[i].split("").reverse().join("");
+    if(array[i]==sud){
+        console.log(array[i]);
+    }
+}
+})(["madam", "sudarsan","dad","racecar","ball"]);
+
+6.Return median of two sorted arrays of the same size
+
+Anonymous Function:
+
+var arr1 =[1,8,6,4,7,8];
+var arr2 =[5,7,9,2,10];
+var median = function(){
+    var arr3 =[...arr1,...arr2].sort();
+var len=arr3.length;
+if(len%2==0){
+    console.log(arr3[len/2-1]+arr3[len/2]);
+}
+else if(len%2!=0){
+    console.log(arr3[Math.floor(len/2)]);
+}
+};median();
+
+IIFE Function:
+
+(function(arr1,arr2){
+    var arr3 =[...arr1,...arr2].sort();
+var len=arr3.length;
+if(len%2==0){
+    console.log(arr3[len/2-1]+arr3[len/2]);
+}
+else if(len%2!=0){
+    console.log(arr3[Math.floor(len/2)]);
+}
+})([1,8,6,4,7,8],[5,7,9,2,10]);
+
+7.Remove duplicates from an array
+
+Anonymous Function:
+
+var array=[1,2,6,4,8,2,6,7,8,9,4,5,6,4,2];
+var sudarsan = [...new Set(array)];
+console.log(sudarsan);
+
+IIFE Function:
+
+(function(num){
+    var sudarsan=num.filter(function(value, index, array){
+    return array.indexOf(value)===index;
+});console.log(sudarsan);
+})([1,2,2,6,4,8,2,6,7,8,9,4,5,6,4,2]);
+
+
+8.Rotate an array by k times
+
+Anonymous Function:
+
+var arr = [1,2,3,4,5,6,7];
+var rotate = function(){
+    var n=arr.length;
+var k=3;
+var sud=[]
+k=k%n;
+for(var i=0; i<n; i++){
+    if(i<k){
+        sud.push(arr[n+i-k]);
+    }else{
+        sud.push(arr[i-k]);
+    }
+};console.log(sud)
+};rotate();
+
+IIFE Function:
+
+(function(arr){
+    var n=arr.length;
+var k=3;
+var sud=[]
+k=k%n;
+for(var i=0; i<n; i++){
+    if(i<k){
+        sud.push(arr[n+i-k]);
+    }else{
+        sud.push(arr[i-k]);
+    }
+};console.log(sud)
+})([1,2,3,4,5,6,7]);
+
+
