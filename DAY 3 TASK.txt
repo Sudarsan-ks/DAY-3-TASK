@@ -23,6 +23,13 @@ IIFE Function:
 
 Arrow Function:
 
+var sud=(array)=>{
+   for(var i=0; i<array.length; i++){
+       if(array[i]%2!=0){
+           console.log(array[i]);
+       }
+   }
+};(sud([1,2,3,5,6,7,8,12,15]));
 
 2.Convert all the strings to title caps in a string array
 
@@ -48,6 +55,17 @@ IIFE Function:
     console.log(sud.join(" "));
 })("Sudarsan the developer");
 
+Arrow Function:
+
+var sud=(str)=>{
+    str=str.split(" ");
+    for(var i=0; i<str.length; i++){
+        str[i]=str[i].charAt(0).toUpperCase()+str[i].slice(1);
+    };
+    return str.join(" ");
+};
+console.log(sud("sudarsan the developer"));
+
 3.Sum of all numbers in an array
 
 Anonymous Function:
@@ -70,6 +88,17 @@ IIFE Function:
     }
     console.log(sum);
 })([1,2,3,4,5,6,7,8,9])
+
+Arrow Function:
+
+var sud=(num)=>{
+    var sum=0;
+    for(var i=0; i<num.length; i++){
+        sum=sum+num[i]
+    };
+    return sum;;
+};
+console.log(sud([1,3,5,4,8,7,9,2,6,4]));
 
 4.Return all the prime numbers in an array
 
@@ -103,6 +132,21 @@ IIFE Function:
     }
 })([2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17]);
 
+Arrow Function:
+
+var sud=(num)=>{
+    var arr=[];
+    for(var j=0; j<num.length; j++){
+        var count =0;
+        for(var i=1; i<=num[j]; i++){
+           if(num[j]%i==0)
+           count++
+        }if(count==2){
+            console.log(num[j]);
+        }
+    }
+};sud([1,3,5,4,8,7,9,2,6,4]);
+
 5.Return all the palindromes in an array
 
 Anonymous Function:
@@ -128,6 +172,17 @@ IIFE Function:
     }
 }
 })(["madam", "sudarsan","dad","racecar","ball"]);
+
+Arrow Function:
+
+var palindrome=(arr)=>{
+    for(var i=0; i<arr.length; i++){
+        var sud=arr[i].split("").reverse().join("");
+        if(sud==arr[i]){
+            console.log(arr[i])
+        }
+    } 
+};palindrome(["madam", "sudarsan","dad","racecar","ball"]);
 
 6.Return median of two sorted arrays of the same size
 
